@@ -13,22 +13,55 @@
 
 <body>
     <div class="header">
-        <h1>Good Morning!</h1>
+        <h1>Hello!</h1>
         <div class="header-controls">
-            <div class="dropdown">
-                Daily <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="date-picker">
-                <i class="fas fa-calendar"></i>
-                16 January 2026
-            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-            <div class="export-btn">
-                <i class="fas fa-download"></i>
-                Export
+            <div class="desktop-controls">
+                <div class="dropdown">
+                    Daily <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="date-picker">
+                    <i class="fas fa-calendar"></i>
+                    16 January 2026
+                </div>
+
+                <div class="export-btn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="mobile-nav" id="mobileNav">
+
+        <div class="mobile-nav-header">
+            <button class="close-mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+
+        <div class="dropdown">
+            Daily <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="date-picker">
+            <i class="fas fa-calendar"></i>
+            16 January 2026
+        </div>
+
+        <div class="export-btn">
+            <i class="fas fa-download"></i>
+            Export
+        </div>
+
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
     <div class="main-content">
         <div class="dashboard-grid">
@@ -48,7 +81,7 @@
                     <h3 class="card-title">Monthly Expenses</h3>
                     <button class="card-menu"><i class="fas fa-ellipsis-h"></i></button>
                 </div>
-                <div class="amount income-amount">$1,895.00</div>
+                <div class="amount expense-amount">$1,895.00</div>
                 <div class="change">
                     <i class="fas fa-arrow-up"></i>
                     12% vs Last month
@@ -170,7 +203,7 @@
                                 <span>863</span>
                             </li>
                         </ul>
-                        
+
                         <ul class="expense-categories">
                             <li class="expense-category">
                                 <div class="category-info">
@@ -180,7 +213,7 @@
                                 <span>248</span>
                             </li>
                         </ul>
-                        
+
                         <ul class="expense-categories">
                             <li class="expense-category">
                                 <div class="category-info">
@@ -190,7 +223,7 @@
                                 <span>1835</span>
                             </li>
                         </ul>
-                        
+
                         <ul class="expense-categories">
                             <li class="expense-category">
                                 <div class="category-info">
@@ -262,18 +295,18 @@
     </div>
 
     <!-- Income ans expense buttons -->
-     <div class="add-buttons">
+    <div class="add-buttons">
         <button class="fab fab-income" onclick="openIncomeModel()" title="Add Income">
             <i class="fas fa-plus"></i>
         </button>
-        
+
         <button class="fab fab-expense" onclick="openExpenseModel()" title="Add Expense">
             <i class="fas fa-minus"></i>
         </button>
-     </div>
+    </div>
 
-     <!-- Income Model -->
-      <div id="incomeModel" class="model">
+    <!-- Income Model -->
+    <div id="incomeModel" class="model">
         <div class="model-content">
             <div class="model-header">
                 <h2 class="model-title">Add Income</h2>
@@ -301,9 +334,10 @@
 
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <input type="text" class="form-input" id="incomeDescription" placeholder="Enter Description" required>
+                        <input type="text" class="form-input" id="incomeDescription" placeholder="Enter Description"
+                            required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label class="form-label">Date</label>
                         <input type="date" class="form-input" id="incomeDate" required>
@@ -316,10 +350,10 @@
                 <button class="btn btn-primary" onclick="addIncome()">Add Income</button>
             </div>
         </div>
-      </div>
-     
-      <!-- Expense Model -->
-      <div id="expenseModel" class="model">
+    </div>
+
+    <!-- Expense Model -->
+    <div id="expenseModel" class="model">
         <div class="model-content">
             <div class="model-header">
                 <h2 class="model-title">Add Expense</h2>
@@ -348,9 +382,10 @@
 
                     <div class="form-group">
                         <label class="form-label">Description</label>
-                        <input type="text" class="form-input" id="expenseDescription" placeholder="Enter Description" required>
+                        <input type="text" class="form-input" id="expenseDescription" placeholder="Enter Description"
+                            required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label class="form-label">Date</label>
                         <input type="date" class="form-input" id="expenseDate" required>
@@ -363,7 +398,7 @@
                 <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
             </div>
         </div>
-      </div>
+    </div>
 
 </body>
 <script src="script.js"></script>
