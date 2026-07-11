@@ -13,7 +13,7 @@
 
 <body>
     <div class="header">
-        <h1>Good Morning, Diamond</h1>
+        <h1>Good Morning!</h1>
         <div class="header-controls">
             <div class="dropdown">
                 Daily <i class="fas fa-chevron-down"></i>
@@ -63,7 +63,7 @@
 
                 <div class="card-chip"></div>
                 <div class="card-number">5435 2735 0037 0015</div>
-                <div class="card-holder">Diamond</div>
+                <div class="card-holder"></div>
 
                 <div class="card-logo">
                     <div class="card-logo-circle logo-red"></div>
@@ -276,7 +276,7 @@
       <div id="incomeModel" class="model">
         <div class="model-content">
             <div class="model-header">
-                <h2 class="model">Add Income</h2>
+                <h2 class="model-title">Add Income</h2>
                 <button class="close-btn" onclick="closeModel('incomeModel')">&times;</button>
             </div>
 
@@ -311,7 +311,57 @@
                 </form>
             </div>
 
-            <div class="model-footer"></div>
+            <div class="model-footer">
+                <button class="btn btn-secondary" onclick="closeModel('incomeModel')">Cancel</button>
+                <button class="btn btn-primary" onclick="addIncome()">Add Income</button>
+            </div>
+        </div>
+      </div>
+     
+      <!-- Expense Model -->
+      <div id="expenseModel" class="model">
+        <div class="model-content">
+            <div class="model-header">
+                <h2 class="model-title">Add Expense</h2>
+                <button class="close-btn" onclick="closeModel('expenseModel')">&times;</button>
+            </div>
+
+            <div class="model-body">
+                <form id="expenseForm" autocomplete="off">
+                    <div class="form-group">
+                        <label class="form-label">Amount</label>
+                        <input type="number" class="form-input" id="expenseAmount" placeholder="Enter Amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" id="expenseCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="food">Food</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="transport">Transport</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-input" id="expenseDescription" placeholder="Enter Description" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-input" id="expenseDate" required>
+                    </div>
+                </form>
+            </div>
+
+            <div class="model-footer">
+                <button class="btn btn-secondary" onclick="closeModel('expenseModel')">Cancel</button>
+                <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
+            </div>
         </div>
       </div>
 
